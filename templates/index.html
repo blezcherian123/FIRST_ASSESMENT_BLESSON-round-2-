@@ -3,303 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBS Credit Card Statement Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>DBS Bank Statement Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC&family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #D31145;
-            --secondary-color: #333333;
-            --accent-color: #F7F7F7;
-            --success-color: #28a745;
-            --error-color: #dc3545;
+            --primary-color: #ED1C24;
+            --primary-light: #fef0f0;
+            --primary-dark: #c4161d;
+            --secondary-color: #231F20;
+            --text-color: #333333;
+            --light-gray: #e5e7eb;
+            --medium-gray: #9ca3af;
+            --dark-gray: #4b5563;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 8px;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            color: var(--secondary-color);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafb;
         }
-        
+
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
+
         .header {
-            text-align: center;
-            margin-bottom: 30px;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--light-gray);
+            padding: 16px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
+
         .logo {
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
-        
-        .logo img {
-            height: 40px;
-        }
-        
-        h1 {
-            color: var(--primary-color);
-            font-size: 28px;
+
+        .logo-text {
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 10px;
+            color: var(--primary-color);
+            margin-left: 10px;
+            letter-spacing: -0.5px;
         }
-        
-        .subtitle {
+
+        .page-content {
+            padding: 40px 0;
+        }
+
+        .title-section {
+            margin-bottom: 32px;
+        }
+
+        .title {
+            font-size: 28px;
             color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
             font-size: 16px;
-            font-weight: 300;
+            color: var(--dark-gray);
+            max-width: 600px;
         }
-        
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid var(--light-gray);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--secondary-color);
         }
-        
+
         input, select {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 16px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
             font-size: 16px;
-            transition: border 0.3s ease;
+            transition: all 0.3s;
+            color: var(--text-color);
         }
-        
+
         input:focus, select:focus {
-            border-color: var(--primary-color);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(211, 17, 69, 0.2);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.15);
         }
-        
-        .btn {
-            display: inline-block;
+
+        input::placeholder {
+            color: var(--medium-gray);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--primary-color);
-            color: white;
+            color: var(--white);
             border: none;
-            border-radius: 5px;
-            padding: 12px 25px;
+            padding: 12px 24px;
             font-size: 16px;
             font-weight: 500;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        .btn:hover {
-            background-color: #b00e3a;
-            transform: translateY(-2px);
+
+        .button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
         }
-        
-        .btn:active {
+
+        .button:active {
             transform: translateY(0);
         }
-        
-        .language-flag {
-            width: 20px;
-            height: 15px;
+
+        .button:disabled {
+            background-color: var(--medium-gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .button i {
             margin-right: 8px;
-            vertical-align: middle;
         }
-        
-        .select-wrapper {
-            position: relative;
+
+        .button-secondary {
+            background-color: var(--white);
+            color: var(--secondary-color);
+            border: 1px solid var(--light-gray);
         }
-        
-        .select-wrapper::after {
-            content: '▼';
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-            pointer-events: none;
-            font-size: 12px;
-            color: #666;
+
+        .button-secondary:hover {
+            background-color: #f9fafb;
+            border-color: var(--medium-gray);
         }
-        
-        .status {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
+
+        .preview-section {
             display: none;
+            margin-top: 32px;
+            animation: fadeIn 0.5s ease-in-out;
         }
-        
-        .status.success {
-            background-color: rgba(40, 167, 69, 0.1);
-            border: 1px solid var(--success-color);
-            color: var(--success-color);
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .customer-info {
+            padding: 24px;
+            background-color: var(--primary-light);
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            border: 1px solid rgba(237, 28, 36, 0.2);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .info-item {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label-text {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 32px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(237, 28, 36, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
             display: flex;
             align-items: center;
-            justify-content: space-between;
         }
-        
-        .status.error {
-            background-color: rgba(220, 53, 69, 0.1);
-            border: 1px solid var(--error-color);
-            color: var(--error-color);
+
+        .alert i {
+            margin-right: 12px;
+            font-size: 20px;
         }
-        
-        .loader {
-            display: none;
-            margin: 20px auto;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid var(--primary-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
+
+        .alert-danger {
+            background-color: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #b91c1c;
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        .alert-success {
+            background-color: #d1fae5;
+            border: 1px solid #a7f3d0;
+            color: #047857;
         }
-        
-        .download-btn {
-            background-color: var(--success-color);
-            margin-left: 10px;
-            padding: 8px 15px;
-            border-radius: 4px;
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            text-decoration: none;
-        }
-        
-        .download-btn:hover {
-            background-color: #218838;
-        }
-        
+
         .footer {
-            margin-top: 30px;
-            text-align: center;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 40px 0;
+            margin-top: 64px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-left: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        .footer-copyright {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium-gray);
             font-size: 14px;
-            color: #666;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .page-content {
+                padding: 24px 0;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-buttons .button {
+                width: 100%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
+    <div class="header">
+        <div class="container">
             <div class="logo">
-                <!-- Replace with actual DBS logo path or use text -->
-                <svg height="40" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="30" height="30" fill="#D31145" />
-                    <path d="M40 5H60V10H40V5Z" fill="#D31145" />
-                    <path d="M40 12.5H70V17.5H40V12.5Z" fill="#D31145" />
-                    <path d="M40 20H80V25H40V20Z" fill="#D31145" />
-                </svg>
+                <i class="fas fa-university fa-lg" style="color: var(--primary-color);"></i>
+                <span class="logo-text">DBS Bank</span>
             </div>
-            <h1>Credit Card Statement Generator</h1>
-            <p class="subtitle">Generate your statement in your preferred language</p>
         </div>
-        
-        <div class="card">
-            <form id="statementForm">
-                <div class="form-group">
-                    <label for="customer_id">Customer ID</label>
-                    <input type="number" id="customer_id" name="customer_id" placeholder="Enter your customer ID" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="language">Preferred Language</label>
-                    <div class="select-wrapper">
+    </div>
+
+    <div class="container">
+        <div class="page-content">
+            <div class="title-section">
+                <h1 class="title">Credit Card Statement Generator</h1>
+                <p class="subtitle">Generate and download your credit card statement in just a few clicks.</p>
+            </div>
+
+            <div class="alert alert-danger" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorMessage"></span>
+            </div>
+            
+            <div class="card">
+                <form id="statementForm">
+                    <div class="form-group">
+                        <label for="customerId">Customer ID</label>
+                        <input type="number" id="customerId" name="customerId" required placeholder="Enter your customer ID">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="language">Statement Language</label>
                         <select id="language" name="language">
-                            <option value="en">🇬🇧 English</option>
-                            <option value="zh">🇨🇳 Chinese (中文)</option>
-                            <option value="ms">🇲🇾 Malay (Bahasa Melayu)</option>
-                            <option value="ta">🇮🇳 Tamil (தமிழ்)</option>
+                            <option value="en">English</option>
+                            <!-- Other languages will be loaded dynamically -->
                         </select>
                     </div>
+
+                    <button type="button" id="previewButton" class="button">
+                        <i class="fas fa-search"></i> Preview Customer Info
+                    </button>
+                </form>
+
+                <div class="loading" id="loading">
+                    <div class="loader"></div>
+                    <p>Loading customer information...</p>
                 </div>
-                
-                <button type="submit" class="btn">Generate Statement</button>
-            </form>
-            
-            <div class="loader" id="loader"></div>
-            
-            <div class="status" id="status"></div>
+
+                <div class="preview-section" id="previewSection">
+                    <h3 class="section-title">Customer Information</h3>
+                    
+                    <div class="customer-info">
+                        <div class="info-grid">
+                            <div>
+                                <div class="info-item">
+                                    <span class="label-text">Customer</span>
+                                    <span class="info-value" id="customerName"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Customer ID</span>
+                                    <span class="info-value" id="customerIdDisplay"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Email</span>
+                                    <span class="info-value" id="customerEmail"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Phone</span>
+                                    <span class="info-value" id="customerPhone"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="info-item">
+                                    <span class="label-text">Account Number</span>
+                                    <span class="info-value" id="accountNumber"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Card Number</span>
+                                    <span class="info-value" id="cardNumber"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Account Type</span>
+                                    <span class="info-value" id="accountType"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label-text">Credit Limit</span>
+                                    <span class="info-value" id="creditLimit"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" id="cancelButton" class="button button-secondary">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button type="button" id="generateButton" class="button">
+                            <i class="fas fa-file-pdf"></i> Generate PDF Statement
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="footer">
-            <p>&copy; 2025 DBS Bank. All rights reserved.</p>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-university" style="color: var(--white);"></i>
+                    <span class="footer-logo-text">DBS Bank</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="currentYear"></span> DBS Bank. All rights reserved.</p>
+            </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('statementForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
             
-            const customerId = document.getElementById('customer_id').value;
-            const language = document.getElementById('language').value;
-            const loader = document.getElementById('loader');
-            const status = document.getElementById('status');
+            // Fetch available languages
+            fetchLanguages();
             
-            // Show loader
-            loader.style.display = 'block';
-            status.style.display = 'none';
+            // Event listeners
+            document.getElementById('previewButton').addEventListener('click', previewCustomer);
+            document.getElementById('cancelButton').addEventListener('click', cancelPreview);
+            document.getElementById('generateButton').addEventListener('click', generateStatement);
             
-            fetch(`/generate_pdf?customer_id=${customerId}&language=${language}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(response.status === 404 ? 
-                            'Customer ID not found' : 
-                            'Failed to generate statement');
-                    }
-                    return response.blob();
-                })
-                .then(blob => {
-                    // Hide loader
-                    loader.style.display = 'none';
-                    
-                    // Create object URL for download
-                    const url = URL.createObjectURL(blob);
-                    
-                    // Show success message with download button
-                    status.innerHTML = `
-                        <span>Statement successfully generated!</span>
-                        <a href="${url}" download="credit_card_statement_${customerId}.pdf" class="download-btn">
-                            Download PDF
-                        </a>
-                    `;
-                    status.className = 'status success';
-                    status.style.display = 'flex';
-                })
-                .catch(error => {
-                    // Hide loader
-                    loader.style.display = 'none';
-                    
-                    // Show error message
-                    status.textContent = error.message;
-                    status.className = 'status error';
-                    status.style.display = 'block';
+            // Function to fetch available languages
+            function fetchLanguages() {
+                // Simulate fetch with common languages since we're just enhancing UI
+                const mockLanguages = [
+                    { code: 'en', name: 'English' },
+                    { code: 'zh', name: 'Chinese (Simplified)' },
+                    { code: 'ms', name: 'Malay' },
+                    { code: 'ta', name: 'Tamil' }
+                ];
+                
+                const languageSelect = document.getElementById('language');
+                languageSelect.innerHTML = ''; // Clear existing options
+                
+                mockLanguages.forEach(lang => {
+                    const option = document.createElement('option');
+                    option.value = lang.code;
+                    option.textContent = lang.name;
+                    languageSelect.appendChild(option);
                 });
+                
+                // Keep the original fetch code for functionality
+                fetch('/api/languages')
+                    .then(response => response.json())
+                    .then(languages => {
+                        const languageSelect = document.getElementById('language');
+                        languageSelect.innerHTML = ''; // Clear existing options
+                        
+                        languages.forEach(lang => {
+                            const option = document.createElement('option');
+                            option.value = lang.code;
+                            option.textContent = lang.name;
+                            languageSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching languages:', error);
+                        showError('Failed to load available languages. Please refresh the page.');
+                    });
+            }
+            
+            // Function to preview customer information
+            function previewCustomer() {
+                const customerId = document.getElementById('customerId').value.trim();
+                
+                if (!customerId) {
+                    showError('Please enter a customer ID');
+                    return;
+                }
+                
+                // Show loading indicator
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('previewSection').style.display = 'none';
+                hideError();
+                
+                // Fetch customer data
+                fetch(`/api/customer/${customerId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(response.status === 404 ? 'Customer not found' : 'Error fetching customer data');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Hide loading and show preview
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('previewSection').style.display = 'block';
+                        
+                        // Update customer info display
+                        const customer = data.customer;
+                        const account = data.account;
+                        
+                        document.getElementById('customerName').textContent = `${customer.first_name} ${customer.last_name}`;
+                        document.getElementById('customerIdDisplay').textContent = customer.customer_id;
+                        document.getElementById('customerEmail').textContent = customer.email;
+                        document.getElementById('customerPhone').textContent = customer.phone;
+                        
+                        if (account) {
+                            document.getElementById('accountNumber').textContent = account.account_number;
+                            document.getElementById('cardNumber').textContent = account.card_number;
+                            document.getElementById('accountType').textContent = account.account_type;
+                            document.getElementById('creditLimit').textContent = formatCurrency(account.credit_limit);
+                        } else {
+                            document.getElementById('accountNumber').textContent = 'N/A';
+                            document.getElementById('cardNumber').textContent = 'N/A';
+                            document.getElementById('accountType').textContent = 'N/A';
+                            document.getElementById('creditLimit').textContent = 'N/A';
+                            
+                            // Disable generate button if no account
+                            document.getElementById('generateButton').disabled = true;
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById('loading').style.display = 'none';
+                        showError(error.message);
+                    });
+            }
+            
+            // Function to cancel preview
+            function cancelPreview() {
+                document.getElementById('previewSection').style.display = 'none';
+                document.getElementById('customerId').value = '';
+                hideError();
+            }
+            
+            // Function to generate statement
+            function generateStatement() {
+                const customerId = document.getElementById('customerId').value.trim();
+                const language = document.getElementById('language').value;
+                
+                if (!customerId) {
+                    showError('Please enter a customer ID');
+                    return;
+                }
+                
+                // Create a form to submit for PDF download
+                const form = document.createElement('form');
+                form.method = 'GET';
+                form.action = '/generate_statement';
+                form.target = '_blank';
+                
+                // Add customer ID parameter
+                const customerIdInput = document.createElement('input');
+                customerIdInput.type = 'hidden';
+                customerIdInput.name = 'customer_id';
+                customerIdInput.value = customerId;
+                form.appendChild(customerIdInput);
+                
+                // Add language parameter
+                const languageInput = document.createElement('input');
+                languageInput.type = 'hidden';
+                languageInput.name = 'language';
+                languageInput.value = language;
+                form.appendChild(languageInput);
+                
+                // Submit the form
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+            }
+            
+            // Helper function to show error
+            function showError(message) {
+                const errorAlert = document.getElementById('errorAlert');
+                document.getElementById('errorMessage').textContent = message;
+                errorAlert.style.display = 'flex';
+            }
+            
+            // Helper function to hide error
+            function hideError() {
+                document.getElementById('errorAlert').style.display = 'none';
+            }
+            
+            // Helper function to format currency
+            function formatCurrency(amount) {
+                return new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(amount);
+            }
         });
     </script>
 </body>
