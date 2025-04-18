@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC&family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Light Theme Variables */
             --primary-color: #ED1C24;
             --primary-light: #fef0f0;
             --primary-dark: #c4161d;
             --secondary-color: #231F20;
             --text-color: #333333;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
             --light-gray: #e5e7eb;
             --medium-gray: #9ca3af;
             --dark-gray: #4b5563;
@@ -23,20 +26,51 @@
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --border-radius: 8px;
+            --border-radius: 10px;
+            --header-bg: #ffffff;
+            --footer-bg: #231F20;
+            --footer-text: #ffffff;
+            --footer-link: #9ca3af;
+            --input-bg: #ffffff;
+            --input-border: #e5e7eb;
+        }
+
+        /* Dark Theme Variables */
+        html[data-theme='dark'] {
+            --primary-color: #FF464E;
+            --primary-light: #3d2325;
+            --primary-dark: #FF464E;
+            --secondary-color: #f3f4f6;
+            --text-color: #e5e7eb;
+            --bg-color: #111827;
+            --card-bg: #1f2937;
+            --light-gray: #374151;
+            --medium-gray: #6b7280;
+            --dark-gray: #9ca3af;
+            --white: #1f2937;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.16);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            --header-bg: #1f2937;
+            --footer-bg: #111827;
+            --footer-text: #e5e7eb;
+            --footer-link: #9ca3af;
+            --input-bg: #374151;
+            --input-border: #4b5563;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f9fafb;
+            background-color: var(--bg-color);
         }
 
         .container {
@@ -46,13 +80,19 @@
         }
 
         .header {
-            background-color: var(--white);
+            background-color: var(--header-bg);
             border-bottom: 1px solid var(--light-gray);
             padding: 16px 0;
             box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -68,29 +108,49 @@
             letter-spacing: -0.5px;
         }
 
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--text-color);
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--light-gray);
+        }
+
         .page-content {
             padding: 40px 0;
         }
 
         .title-section {
             margin-bottom: 32px;
+            text-align: center;
         }
 
         .title {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--secondary-color);
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--dark-gray);
-            max-width: 600px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .card {
-            background-color: var(--white);
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-md);
             padding: 32px;
@@ -117,12 +177,13 @@
 
         input, select {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--light-gray);
+            padding: 14px 16px;
+            border: 1px solid var(--input-border);
             border-radius: var(--border-radius);
             font-size: 16px;
             transition: all 0.3s;
             color: var(--text-color);
+            background-color: var(--input-bg);
         }
 
         input:focus, select:focus {
@@ -142,9 +203,9 @@
             background-color: var(--primary-color);
             color: var(--white);
             border: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
             border-radius: var(--border-radius);
             cursor: pointer;
             transition: all 0.3s;
@@ -155,10 +216,12 @@
         .button:hover {
             background-color: var(--primary-dark);
             transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
         }
 
         .button:active {
             transform: translateY(0);
+            box-shadow: var(--shadow-sm);
         }
 
         .button:disabled {
@@ -168,17 +231,18 @@
         }
 
         .button i {
-            margin-right: 8px;
+            margin-right: 10px;
+            font-size: 18px;
         }
 
         .button-secondary {
-            background-color: var(--white);
-            color: var(--secondary-color);
+            background-color: transparent;
+            color: var(--text-color);
             border: 1px solid var(--light-gray);
         }
 
         .button-secondary:hover {
-            background-color: #f9fafb;
+            background-color: var(--light-gray);
             border-color: var(--medium-gray);
         }
 
@@ -194,11 +258,11 @@
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 16px;
-            padding-bottom: 8px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             border-bottom: 2px solid var(--primary-light);
         }
 
@@ -292,8 +356,8 @@
         }
 
         .footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             padding: 40px 0;
             margin-top: 64px;
         }
@@ -312,7 +376,7 @@
         .footer-logo-text {
             font-size: 20px;
             font-weight: 700;
-            color: var(--white);
+            color: var(--footer-text);
             margin-left: 10px;
         }
 
@@ -322,13 +386,13 @@
         }
 
         .footer-link {
-            color: var(--medium-gray);
+            color: var(--footer-link);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-link:hover {
-            color: var(--white);
+            color: var(--footer-text);
         }
 
         .footer-copyright {
@@ -338,6 +402,50 @@
             color: var(--medium-gray);
             font-size: 14px;
             text-align: center;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            width: 100%;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            height: 8px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        /* Card decorative elements */
+        .card-decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .decoration-1 {
+            top: -50px;
+            right: -50px;
+        }
+
+        .decoration-2 {
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .card-container {
+            position: relative;
+            overflow: hidden;
         }
 
         /* Responsive Styles */
@@ -380,9 +488,14 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-university fa-lg" style="color: var(--primary-color);"></i>
-                <span class="logo-text">DBS Bank</span>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-university fa-lg" style="color: var(--primary-color);"></i>
+                    <span class="logo-text">DBS Bank</span>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -391,7 +504,7 @@
         <div class="page-content">
             <div class="title-section">
                 <h1 class="title">Credit Card Statement Generator</h1>
-                <p class="subtitle">Generate and download your credit card statement in just a few clicks.</p>
+                <p class="subtitle">Generate and download your credit card statement in just a few clicks. Simple, secure, and convenient.</p>
             </div>
 
             <div class="alert alert-danger" id="errorAlert">
@@ -399,82 +512,90 @@
                 <span id="errorMessage"></span>
             </div>
             
-            <div class="card">
-                <form id="statementForm">
-                    <div class="form-group">
-                        <label for="customerId">Customer ID</label>
-                        <input type="number" id="customerId" name="customerId" required placeholder="Enter your customer ID">
-                    </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-decoration decoration-1"></div>
+                    <div class="card-decoration decoration-2"></div>
                     
-                    <div class="form-group">
-                        <label for="language">Statement Language</label>
-                        <select id="language" name="language">
-                            <option value="en">English</option>
-                            <!-- Other languages will be loaded dynamically -->
-                        </select>
-                    </div>
+                    <form id="statementForm">
+                        <div class="form-group">
+                            <label for="customerId">Customer ID</label>
+                            <input type="number" id="customerId" name="customerId" required placeholder="Enter your customer ID">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="language">Statement Language</label>
+                            <select id="language" name="language">
+                                <option value="en">English</option>
+                                <!-- Other languages will be loaded dynamically -->
+                            </select>
+                        </div>
 
-                    <button type="button" id="previewButton" class="button">
-                        <i class="fas fa-search"></i> Preview Customer Info
-                    </button>
-                </form>
+                        <button type="button" id="previewButton" class="button">
+                            <i class="fas fa-search"></i> Preview Customer Info
+                        </button>
+                    </form>
 
-                <div class="loading" id="loading">
-                    <div class="loader"></div>
-                    <p>Loading customer information...</p>
-                </div>
-
-                <div class="preview-section" id="previewSection">
-                    <h3 class="section-title">Customer Information</h3>
-                    
-                    <div class="customer-info">
-                        <div class="info-grid">
-                            <div>
-                                <div class="info-item">
-                                    <span class="label-text">Customer</span>
-                                    <span class="info-value" id="customerName"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Customer ID</span>
-                                    <span class="info-value" id="customerIdDisplay"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Email</span>
-                                    <span class="info-value" id="customerEmail"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Phone</span>
-                                    <span class="info-value" id="customerPhone"></span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="info-item">
-                                    <span class="label-text">Account Number</span>
-                                    <span class="info-value" id="accountNumber"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Card Number</span>
-                                    <span class="info-value" id="cardNumber"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Account Type</span>
-                                    <span class="info-value" id="accountType"></span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="label-text">Credit Limit</span>
-                                    <span class="info-value" id="creditLimit"></span>
-                                </div>
-                            </div>
+                    <div class="loading" id="loading">
+                        <div class="loader"></div>
+                        <p>Loading customer information...</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar"></div>
                         </div>
                     </div>
 
-                    <div class="action-buttons">
-                        <button type="button" id="cancelButton" class="button button-secondary">
-                            <i class="fas fa-times"></i> Cancel
-                        </button>
-                        <button type="button" id="generateButton" class="button">
-                            <i class="fas fa-file-pdf"></i> Generate PDF Statement
-                        </button>
+                    <div class="preview-section" id="previewSection">
+                        <h3 class="section-title">Customer Information</h3>
+                        
+                        <div class="customer-info">
+                            <div class="info-grid">
+                                <div>
+                                    <div class="info-item">
+                                        <span class="label-text">Customer</span>
+                                        <span class="info-value" id="customerName"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Customer ID</span>
+                                        <span class="info-value" id="customerIdDisplay"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Email</span>
+                                        <span class="info-value" id="customerEmail"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Phone</span>
+                                        <span class="info-value" id="customerPhone"></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="info-item">
+                                        <span class="label-text">Account Number</span>
+                                        <span class="info-value" id="accountNumber"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Card Number</span>
+                                        <span class="info-value" id="cardNumber"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Account Type</span>
+                                        <span class="info-value" id="accountType"></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label-text">Credit Limit</span>
+                                        <span class="info-value" id="creditLimit"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" id="cancelButton" class="button button-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="button" id="generateButton" class="button">
+                                <i class="fas fa-file-pdf"></i> Generate PDF Statement
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -485,7 +606,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-university" style="color: var(--white);"></i>
+                    <i class="fas fa-university" style="color: var(--footer-text);"></i>
                     <span class="footer-logo-text">DBS Bank</span>
                 </div>
                 <div class="footer-links">
@@ -504,6 +625,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Theme Toggle Functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+            
+            // Theme toggle click event
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+            
+            // Update theme icon based on current theme
+            function updateThemeIcon(theme) {
+                const icon = themeToggle.querySelector('i');
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-sun';
+                } else {
+                    icon.className = 'fas fa-moon';
+                }
+            }
             
             // Fetch available languages
             fetchLanguages();
@@ -567,6 +717,9 @@
                 document.getElementById('previewSection').style.display = 'none';
                 hideError();
                 
+                // Simulate progress bar for better UX
+                simulateProgress();
+                
                 // Fetch customer data
                 fetch(`/api/customer/${customerId}`)
                     .then(response => {
@@ -591,7 +744,10 @@
                         
                         if (account) {
                             document.getElementById('accountNumber').textContent = account.account_number;
-                            document.getElementById('cardNumber').textContent = account.card_number;
+                            // Format card number with asterisks for privacy
+                            const cardNum = account.card_number;
+                            const formattedCardNum = cardNum.slice(0, 4) + ' **** **** ' + cardNum.slice(-4);
+                            document.getElementById('cardNumber').textContent = formattedCardNum;
                             document.getElementById('accountType').textContent = account.account_type;
                             document.getElementById('creditLimit').textContent = formatCurrency(account.credit_limit);
                         } else {
@@ -610,11 +766,34 @@
                     });
             }
             
+            // Simulate progress for loading state
+            function simulateProgress() {
+                const progressBar = document.getElementById('progressBar');
+                let width = 0;
+                const interval = setInterval(() => {
+                    if (width >= 90) {
+                        clearInterval(interval);
+                    } else {
+                        width += Math.random() * 10;
+                        if (width > 90) width = 90;
+                        progressBar.style.width = width + '%';
+                    }
+                }, 300);
+                
+                // Auto-complete after a certain time (fallback)
+                setTimeout(() => {
+                    progressBar.style.width = '100%';
+                }, 3000);
+            }
+            
             // Function to cancel preview
             function cancelPreview() {
                 document.getElementById('previewSection').style.display = 'none';
                 document.getElementById('customerId').value = '';
                 hideError();
+                
+                // Reset progress bar
+                document.getElementById('progressBar').style.width = '0%';
             }
             
             // Function to generate statement
@@ -651,6 +830,9 @@
                 document.body.appendChild(form);
                 form.submit();
                 document.body.removeChild(form);
+                
+                // Show a success message
+                showSuccessMessage('Your statement is being generated and will download shortly.');
             }
             
             // Helper function to show error
@@ -658,6 +840,25 @@
                 const errorAlert = document.getElementById('errorAlert');
                 document.getElementById('errorMessage').textContent = message;
                 errorAlert.style.display = 'flex';
+                errorAlert.className = 'alert alert-danger';
+                
+                // Auto-hide after some time
+                setTimeout(() => {
+                    hideError();
+                }, 5000);
+            }
+            
+            // Helper function to show success message
+            function showSuccessMessage(message) {
+                const errorAlert = document.getElementById('errorAlert');
+                document.getElementById('errorMessage').textContent = message;
+                errorAlert.style.display = 'flex';
+                errorAlert.className = 'alert alert-success';
+                
+                // Auto-hide after some time
+                setTimeout(() => {
+                    hideError();
+                }, 5000);
             }
             
             // Helper function to hide error
@@ -671,6 +872,26 @@
                     style: 'currency',
                     currency: 'USD'
                 }).format(amount);
+            }
+            
+            // Mock customer data for demo purposes
+            window.fetchCustomerDataDemo = function(customerId) {
+                // This is for demonstration purposes
+                return {
+                    customer: {
+                        customer_id: customerId,
+                        first_name: 'John',
+                        last_name: 'Doe',
+                        email: 'john.doe@example.com',
+                        phone: '+65 9876 5432'
+                    },
+                    account: {
+                        account_number: '1234567890',
+                        card_number: '4111111111111111',
+                        account_type: 'Platinum Credit Card',
+                        credit_limit: 10000
+                    }
+                };
             }
         });
     </script>
