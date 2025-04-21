@@ -26,6 +26,9 @@ HTTP 200 OK, file downloaded successfully
 Result:
 PASS
 
+
+
+
 Test Case #02 – Invalid customer ID
 Input:
 customer_id = 999
@@ -43,6 +46,9 @@ Actual Output:
 HTTP 404, message: "Customer not found."
 Result:
 PASS
+
+
+
 
 Test Case #03 – Bilingual statement in Chinese
 Input:
@@ -66,6 +72,8 @@ PDF content in Chinese with correct formatting
 Result:
 PASS
 
+
+
 Test Case #04 – Missing customer_id in request
 Input:
 URL = /generate_pdf
@@ -84,6 +92,9 @@ HTTP 400, message: "Customer ID is required."
 Result:
 PASS
 
+
+
+
 Test Case #05 – Valid customer, high-volume transaction
 Input:
 customer_id = 124
@@ -101,6 +112,9 @@ Actual Output:
 PDF with 50 transactions and correct pagination
 Result:
 PASS
+
+
+
 
 Test Case #06 – Valid customer, zero transactions
 Input:
@@ -122,6 +136,9 @@ PDF generated with proper message
 Result:
 PASS
 
+
+
+
 Test Case #07 – Invalid language code
 Input:
 customer_id = 123
@@ -139,6 +156,9 @@ Actual Output:
 HTTP 400, proper error message
 Result:
 PASS
+
+
+
 
 Test Case #08 – SQL injection attempt in customer_id
 Input:
@@ -158,6 +178,9 @@ HTTP 400, invalid input
 Result:
 PASS
 
+
+
+
 Test Case #09 – Customer with special characters in name
 Input:
 customer_id = 126
@@ -173,6 +196,9 @@ Actual Output:
 PDF shows name correctly
 Result:
 PASS
+
+
+
 
 Test Case #10 – PDF file name format validation
 Input:
@@ -190,6 +216,9 @@ Correct filename returned
 Result:
 PASS
 
+
+
+
 Test Case #11 – Response content-type is PDF
 Input:
 customer_id = 128
@@ -205,6 +234,9 @@ Actual Output:
 Content-Type verified
 Result:
 PASS
+
+
+
 
 Test Case #12 – Email address shown correctly
 Input:
@@ -222,6 +254,9 @@ Email displayed correctly
 Result:
 PASS
 
+
+
+
 Test Case #13 – International characters in merchant name
 Input:
 customer_id = 130
@@ -237,6 +272,9 @@ Actual Output:
 PDF rendered correctly
 Result:
 PASS
+
+
+
 
 Test Case #14 – Dates formatted correctly
 Input:
@@ -254,6 +292,9 @@ All dates correct
 Result:
 PASS
 
+
+
+
 Test Case #15 – Negative transaction amounts (e.g., refunds)
 Input:
 customer_id = 132
@@ -269,6 +310,9 @@ Actual Output:
 Amount clearly shown
 Result:
 PASS
+
+
+
 
 Test Case #16 – Case-insensitive language input
 Input:
@@ -286,6 +330,9 @@ PDF rendered correctly
 Result:
 PASS
 
+
+
+
 Test Case #17 – HTML/JS injection in merchant name
 Input:
 customer_id = 134
@@ -301,6 +348,9 @@ Actual Output:
 No script execution; safe rendering
 Result:
 PASS
+
+
+
 
 Test Case #18 – Response time under 2 seconds
 Input:
@@ -318,6 +368,9 @@ PDF response within 1.2 seconds
 Result:
 PASS
 
+
+
+
 Test Case #19 – Different fonts per language
 Input:
 customer_id = 136
@@ -333,6 +386,9 @@ Actual Output:
 Correct font applied
 Result:
 PASS
+
+
+
 
 Test Case #20 – Consistent currency format
 Input:
@@ -350,6 +406,9 @@ Correct currency format
 Result:
 PASS
 
+
+
+
 Test Case #21 – No HTML markup in PDF content
 Input:
 customer_id = 138
@@ -365,6 +424,9 @@ Actual Output:
 No markup in file
 Result:
 PASS
+
+
+
 
 Test Case #22 – Valid customer with mixed transaction types
 Input:
@@ -382,6 +444,9 @@ Correct transaction types in PDF
 Result:
 PASS
 
+
+
+
 Test Case #23 – Language fallback if unsupported code
 Input:
 customer_id = 140
@@ -397,6 +462,9 @@ Actual Output:
 English PDF generated
 Result:
 PASS
+
+
+
 
 Test Case #24 – PDF accessibility (text selectable)
 Input:
@@ -414,6 +482,8 @@ Confirmed selectable text
 Result:
 PASS
 
+
+
 Test Case #25 – Repeated requests generate same PDF content
 Input:
 customer_id = 142
@@ -429,3 +499,35 @@ Actual Output:
 No difference in content
 Result:
 PASS
+
+
+
+
+
+| Test Case ID | Description | Input | Validation Rules | Expected Output | Actual Output | Result |
+|--------------|-------------|-------|------------------|------------------|----------------|--------|
+| TC_01 | Valid customer, low-volume transaction | `customer_id=123`, `language=en` | Required int, exists in DB, language in ['en', 'zh'] | PDF with 2 transactions, correct header and fields | As expected | PASS |
+| TC_02 | Invalid customer ID | `customer_id=999` | ID must exist | HTTP 404, error message | As expected | PASS |
+| TC_03 | Bilingual statement (Chinese) | `customer_id=123`, `language=zh` | Language must be 'zh' | PDF with Chinese content & fonts | As expected | PASS |
+| TC_04 | Missing customer_id | (none) | `customer_id` required | HTTP 400, error message | As expected | PASS |
+| TC_05 | High-volume transaction | `customer_id=124` | Paginate if > 20 txns | PDF paginated with 50 transactions | As expected | PASS |
+| TC_06 | Zero transactions | `customer_id=125` | Handle 0-row gracefully | PDF with "No transactions" message | As expected | PASS |
+| TC_07 | Invalid language code | `language=xx` | Language in ['en', 'zh'] | HTTP 400, invalid language | As expected | PASS |
+| TC_08 | SQL injection in customer_id | `customer_id="123; DROP..."` | Must be numeric | HTTP 400, sanitized | As expected | PASS |
+| TC_09 | Special characters in name | `customer_id=126` | UTF-8 required | PDF renders name with accents | As expected | PASS |
+| TC_10 | PDF file name format | `customer_id=127` | Format: credit_card_statement_<id>.pdf | File name validated | As expected | PASS |
+| TC_11 | Response type is PDF | `customer_id=128` | Header: application/pdf | Header validated | As expected | PASS |
+| TC_12 | Email address shown | `customer_id=129` | Must appear in header | Email shown | As expected | PASS |
+| TC_13 | Intl characters in merchant | `customer_id=130` | UTF-8 merchant names | Render correctly | As expected | PASS |
+| TC_14 | Dates formatted | `customer_id=131` | Format: DD-MM-YYYY | All dates correct | As expected | PASS |
+| TC_15 | Negative amounts | `customer_id=132` | Must display -amounts | Correct display of refund | As expected | PASS |
+| TC_16 | Case-insensitive language | `language=EN` | Normalize input | Render English PDF | As expected | PASS |
+| TC_17 | JS injection in merchant name | `<script>alert()</script>` | Escape HTML | Safe rendering | As expected | PASS |
+| TC_18 | Response time < 2s | `customer_id=135` | Time < 2000 ms | 1.2s response | As expected | PASS |
+| TC_19 | Different fonts per language | `language=zh` | Font = Noto Sans SC | Font applied | As expected | PASS |
+| TC_20 | Currency format | `customer_id=137` | Format: $#,###.## | All amounts correct | As expected | PASS |
+| TC_21 | No HTML markup | `customer_id=138` | Strip HTML | PDF clean | As expected | PASS |
+| TC_22 | Mixed transaction types | `customer_id=139` | Support multiple types | All types shown | As expected | PASS |
+| TC_23 | Language fallback | `language=fr` | Default to 'en' | English PDF | As expected | PASS |
+| TC_24 | PDF accessibility | `customer_id=141` | Text selectable | Verified | As expected | PASS |
+| TC_25 | Same PDF on repeat calls | `customer_id=142` | Idempotency | Identical PDFs | As expected | PASS |
