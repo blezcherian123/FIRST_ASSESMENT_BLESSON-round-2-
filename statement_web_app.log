@@ -4063,3 +4063,226 @@
 2025-04-21 14:24:53,400 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 14:24:53] "GET / HTTP/1.1" 200 -
 2025-04-21 14:24:53,602 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 14:24:53] "GET /api/languages HTTP/1.1" 200 -
 2025-04-21 14:24:59,783 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 14:24:59] "GET /api/customer/1 HTTP/1.1" 200 -
+2025-04-21 16:24:37,415 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 16:24:37,457 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-21 16:24:37,457 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-21 16:24:37,459 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 16:24:38,196 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 16:24:38,212 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 16:24:38,219 - werkzeug - INFO -  * Debugger PIN: 345-036-325
+2025-04-21 16:24:42,551 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:24:42] "GET / HTTP/1.1" 200 -
+2025-04-21 16:24:42,803 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:24:42] "GET /api/languages HTTP/1.1" 200 -
+2025-04-21 16:24:42,849 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:24:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-21 16:25:15,146 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:25:15] "GET /api/customer/2 HTTP/1.1" 200 -
+2025-04-21 16:25:22,903 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:25:22] "GET /api/customer/2 HTTP/1.1" 200 -
+2025-04-21 16:25:32,293 - fontTools.ttLib.ttFont - DEBUG - Reading 'maxp' table from disk
+2025-04-21 16:25:32,294 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'maxp' table
+2025-04-21 16:25:32,294 - fontTools.subset.timer - DEBUG - Took 0.001s to load 'maxp'
+2025-04-21 16:25:32,294 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'maxp'
+2025-04-21 16:25:32,295 - fontTools.subset - INFO - maxp pruned
+2025-04-21 16:25:32,296 - fontTools.ttLib.ttFont - DEBUG - Reading 'cmap' table from disk
+2025-04-21 16:25:32,296 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'cmap' table
+2025-04-21 16:25:32,297 - fontTools.ttLib.ttFont - DEBUG - Reading 'post' table from disk
+2025-04-21 16:25:32,297 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'post' table
+2025-04-21 16:25:32,298 - fontTools.subset.timer - DEBUG - Took 0.001s to load 'cmap'
+2025-04-21 16:25:32,298 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'cmap'
+2025-04-21 16:25:32,298 - fontTools.subset - INFO - cmap pruned
+2025-04-21 16:25:32,298 - fontTools.subset - INFO - prep dropped
+2025-04-21 16:25:32,298 - fontTools.subset.timer - DEBUG - Took 0.000s to load 'post'
+2025-04-21 16:25:32,298 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'post'
+2025-04-21 16:25:32,298 - fontTools.subset - INFO - post pruned
+2025-04-21 16:25:32,301 - fontTools.subset - INFO - GPOS dropped
+2025-04-21 16:25:32,301 - fontTools.subset - INFO - GSUB dropped
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Reading 'glyf' table from disk
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'glyf' table
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Reading 'loca' table from disk
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'loca' table
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Reading 'head' table from disk
+2025-04-21 16:25:32,301 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'head' table
+2025-04-21 16:25:32,302 - fontTools.subset.timer - DEBUG - Took 0.001s to load 'glyf'
+2025-04-21 16:25:32,302 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'glyf'
+2025-04-21 16:25:32,302 - fontTools.subset - INFO - glyf pruned
+2025-04-21 16:25:32,303 - fontTools.subset.timer - DEBUG - Took 0.000s to close glyph list over 'cmap'
+2025-04-21 16:25:32,303 - fontTools.subset - INFO - Added gid0 to subset
+2025-04-21 16:25:32,303 - fontTools.subset - INFO - Closing glyph list over 'glyf': 112 glyphs before
+2025-04-21 16:25:32,303 - fontTools.subset - INFO - Glyph names: ['.notdef', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'N', 'O', 'P', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'a', 'aavowelsigntamil', 'aivowelsigntamil', 'at', 'atamil', 'b', 'c', 'catamil', 'cauvowelsigntamil', 'colon.tamil', 'comma.tamil', 'copyright', 'd', 'dollar', 'e', 'eevowelsigntamil', 'eight.tamil', 'etamil', 'evowelsigntamil', 'five.tamil', 'four.tamil', 'g', 'h', 'hyphen.tamil', 'i', 'itamil', 'ivowelsign1tamil', 'ivowelsign2tamil', 'ivowelsign3tamil', 'ivowelsigntamil', 'k', 'kaprehalftamil', 'katamil', 'kauvowelsigntamil', 'l', 'laprehalftamil', 'latamil', 'llaprehalftamil', 'llatamil', 'llauvowelsigntamil', 'm', 'maprehalftamil', 'matamil', 'mauvowelsigntamil', 'n', 'naprehalftamil', 'natamil', 'ngaprehalftamil', 'nine.tamil', 'nnaprehalftamil', 'nnatamil', 'nnnaprehalftamil', 'nnnatamil', 'nyaprehalftamil', 'o', 'one.tamil', 'p', 'paprehalftamil', 'patamil', 'pauvowelsigntamil', 'period.tamil', 'plus.tamil', 'q', 'r', 'raprehalftamil', 'ratamil', 'rauvowelsigntamil', 'rraprehalftamil', 'rratamil', 's', 'seven.tamil', 'six.tamil', 'space', 't', 'taprehalftamil', 'tatamil', 'tauvowelsigntamil', 'three.tamil', 'ttaivowelsigntamil', 'ttaprehalftamil', 'ttatamil', 'ttauvowelsigntamil', 'two.tamil', 'u', 'utamil', 'vatamil', 'vauvowelsigntamil', 'w', 'x', 'y', 'yatamil', 'zero.tamil']
+2025-04-21 16:25:32,304 - fontTools.subset - INFO - Glyph IDs:   [0, 3, 6, 8, 10, 12, 18, 20, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 41, 42, 46, 47, 48, 77, 78, 81, 82, 83, 84, 85, 86, 87, 88, 90, 91, 92, 93, 102, 108, 114, 116, 122, 131, 134, 140, 150, 156, 165, 166, 167, 178, 179, 180, 181, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 257, 268, 269, 274, 278, 287, 288, 294, 306, 312, 318, 328, 335, 341, 344, 354, 355, 360, 361, 370, 381, 382, 387, 391, 401, 405, 407, 418, 420, 425, 426, 432, 442, 444, 445, 449, 455, 458, 469, 474, 475, 494, 498, 502]
+2025-04-21 16:25:32,305 - fontTools.subset - INFO - Closed glyph list over 'glyf': 115 glyphs after
+2025-04-21 16:25:32,305 - fontTools.subset - INFO - Glyph names: ['.notdef', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'I', 'L', 'N', 'O', 'P', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'a', 'aavowelsigntamil', 'aivowelsigntamil', 'at', 'atamil', 'b', 'c', 'catamil', 'cauvowelsigntamil', 'colon.tamil', 'comma.tamil', 'copyright', 'd', 'dollar', 'e', 'eevowelsigntamil', 'eight.tamil', 'etamil', 'evowelsigntamil', 'five.tamil', 'four.tamil', 'g', 'h', 'hyphen.tamil', 'i', 'itamil', 'ivowelsign1tamil', 'ivowelsign2tamil', 'ivowelsign3tamil', 'ivowelsigntamil', 'k', 'kaprehalftamil', 'katamil', 'kauvowelsigntamil', 'l', 'laprehalftamil', 'latamil', 'llaprehalftamil', 'llatamil', 'llauvowelsigntamil', 'm', 'maprehalftamil', 'matamil', 'mauvowelsigntamil', 'n', 'naprehalftamil', 'natamil', 'ngaprehalftamil', 'ngatamil', 'nine.tamil', 'nnaprehalftamil', 'nnatamil', 'nnnaprehalftamil', 'nnnatamil', 'nyaprehalftamil', 'nyatamil', 'o', 'one.tamil', 'p', 'paprehalftamil', 'patamil', 'pauvowelsigntamil', 'period.tamil', 'plus.tamil', 'q', 'r', 'raprehalftamil', 'ratamil', 'rauvowelsigntamil', 'rraprehalftamil', 'rratamil', 's', 'seven.tamil', 'six.tamil', 'space', 't', 'taprehalftamil', 'tatamil', 'tauvowelsigntamil', 'three.tamil', 'ttaivowelsigntamil', 'ttaprehalftamil', 'ttatamil', 'ttauvowelsigntamil', 'two.tamil', 'u', 'utamil', 'vatamil', 'vauvowelsigntamil', 'viramatamil', 'w', 'x', 'y', 'yatamil', 'zero.tamil']
+2025-04-21 16:25:32,305 - fontTools.subset - INFO - Glyph IDs:   [0, 3, 6, 8, 10, 12, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 41, 42, 46, 47, 48, 52, 77, 78, 81, 82, 83, 84, 85, 86, 87, 88, 90, 91, 92, 93, 102, 108, 114, 116, 122, 131, 134, 140, 150, 156, 165, 166, 167, 178, 179, 180, 181, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 257, 268, 269, 274, 278, 287, 288, 294, 306, 312, 318, 328, 335, 341, 344, 354, 355, 360, 361, 370, 381, 382, 387, 391, 401, 405, 407, 418, 420, 425, 426, 432, 442, 444, 445, 449, 455, 458, 469, 474, 475, 494, 498, 502]
+2025-04-21 16:25:32,305 - fontTools.subset.timer - DEBUG - Took 0.003s to close glyph list over 'glyf'
+2025-04-21 16:25:32,306 - fontTools.subset - INFO - Retaining 115 glyphs
+2025-04-21 16:25:32,307 - fontTools.subset - INFO - head subsetting not needed
+2025-04-21 16:25:32,307 - fontTools.subset - INFO - hhea subsetting not needed
+2025-04-21 16:25:32,307 - fontTools.subset - INFO - maxp subsetting not needed
+2025-04-21 16:25:32,307 - fontTools.subset - INFO - OS/2 subsetting not needed
+2025-04-21 16:25:32,307 - fontTools.ttLib.ttFont - DEBUG - Reading 'hmtx' table from disk
+2025-04-21 16:25:32,307 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'hmtx' table
+2025-04-21 16:25:32,307 - fontTools.ttLib.ttFont - DEBUG - Reading 'hhea' table from disk
+2025-04-21 16:25:32,308 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'hhea' table
+2025-04-21 16:25:32,308 - fontTools.subset.timer - DEBUG - Took 0.001s to subset 'hmtx'
+2025-04-21 16:25:32,308 - fontTools.subset - INFO - hmtx subsetted
+2025-04-21 16:25:32,308 - fontTools.subset.timer - DEBUG - Took 0.000s to subset 'cmap'
+2025-04-21 16:25:32,308 - fontTools.subset - INFO - cmap subsetted
+2025-04-21 16:25:32,308 - fontTools.subset - INFO - loca subsetting not needed
+2025-04-21 16:25:32,309 - fontTools.subset.timer - DEBUG - Took 0.000s to subset 'post'
+2025-04-21 16:25:32,309 - fontTools.subset - INFO - post subsetted
+2025-04-21 16:25:32,309 - fontTools.subset - INFO - gasp subsetting not needed
+2025-04-21 16:25:32,309 - fontTools.subset - INFO - STAT subsetting not needed
+2025-04-21 16:25:32,309 - fontTools.ttLib.ttFont - DEBUG - Reading 'GDEF' table from disk
+2025-04-21 16:25:32,309 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'GDEF' table
+2025-04-21 16:25:32,310 - fontTools.subset.timer - DEBUG - Took 0.001s to subset 'GDEF'
+2025-04-21 16:25:32,310 - fontTools.subset - INFO - GDEF subsetted
+2025-04-21 16:25:32,310 - fontTools.subset - INFO - name subsetting not needed
+2025-04-21 16:25:32,310 - fontTools.subset.timer - DEBUG - Took 0.000s to subset 'glyf'
+2025-04-21 16:25:32,310 - fontTools.subset - INFO - glyf subsetted
+2025-04-21 16:25:32,310 - fontTools.subset.timer - DEBUG - Took 0.000s to subset GlyphOrder
+2025-04-21 16:25:32,311 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'head'
+2025-04-21 16:25:32,311 - fontTools.subset - INFO - head pruned
+2025-04-21 16:25:32,312 - fontTools.ttLib.ttFont - DEBUG - Reading 'OS/2' table from disk
+2025-04-21 16:25:32,312 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'OS/2' table
+2025-04-21 16:25:32,313 - fontTools.subset - INFO - OS/2 Unicode ranges pruned: [0, 1, 20]
+2025-04-21 16:25:32,314 - fontTools.subset - INFO - OS/2 CodePage ranges pruned: [0]
+2025-04-21 16:25:32,316 - fontTools.subset.timer - DEBUG - Took 0.001s to prune 'glyf'
+2025-04-21 16:25:32,316 - fontTools.subset - INFO - glyf pruned
+2025-04-21 16:25:32,316 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'GDEF'
+2025-04-21 16:25:32,316 - fontTools.subset - INFO - GDEF pruned
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Reading 'name' table from disk
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'name' table
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Reading 'gasp' table from disk
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'gasp' table
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Reading 'STAT' table from disk
+2025-04-21 16:25:32,317 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'STAT' table
+2025-04-21 16:25:32,318 - fontTools.subset.timer - DEBUG - Took 0.001s to prune 'name'
+2025-04-21 16:25:32,318 - fontTools.subset - INFO - name pruned
+2025-04-21 16:25:32,338 - fontTools.ttLib.ttFont - DEBUG - Reading 'maxp' table from disk
+2025-04-21 16:25:32,338 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'maxp' table
+2025-04-21 16:25:32,338 - fontTools.subset.timer - DEBUG - Took 0.000s to load 'maxp'
+2025-04-21 16:25:32,338 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'maxp'
+2025-04-21 16:25:32,338 - fontTools.subset - INFO - maxp pruned
+2025-04-21 16:25:32,339 - fontTools.ttLib.ttFont - DEBUG - Reading 'cmap' table from disk
+2025-04-21 16:25:32,339 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'cmap' table
+2025-04-21 16:25:32,339 - fontTools.ttLib.ttFont - DEBUG - Reading 'post' table from disk
+2025-04-21 16:25:32,340 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'post' table
+2025-04-21 16:25:32,341 - fontTools.subset.timer - DEBUG - Took 0.003s to load 'cmap'
+2025-04-21 16:25:32,342 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'cmap'
+2025-04-21 16:25:32,342 - fontTools.subset - INFO - cmap pruned
+2025-04-21 16:25:32,342 - fontTools.subset - INFO - fpgm dropped
+2025-04-21 16:25:32,342 - fontTools.subset - INFO - prep dropped
+2025-04-21 16:25:32,342 - fontTools.subset - INFO - cvt  dropped
+2025-04-21 16:25:32,342 - fontTools.subset.timer - DEBUG - Took 0.000s to load 'post'
+2025-04-21 16:25:32,342 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'post'
+2025-04-21 16:25:32,342 - fontTools.subset - INFO - post pruned
+2025-04-21 16:25:32,344 - fontTools.subset - INFO - cvar dropped
+2025-04-21 16:25:32,344 - fontTools.subset - INFO - DSIG dropped
+2025-04-21 16:25:32,344 - fontTools.subset - INFO - GPOS dropped
+2025-04-21 16:25:32,344 - fontTools.subset - INFO - GSUB dropped
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Reading 'gvar' table from disk
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'gvar' table
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Reading 'fvar' table from disk
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'fvar' table
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Reading 'glyf' table from disk
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'glyf' table
+2025-04-21 16:25:32,348 - fontTools.ttLib.ttFont - DEBUG - Reading 'loca' table from disk
+2025-04-21 16:25:32,349 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'loca' table
+2025-04-21 16:25:32,349 - fontTools.ttLib.ttFont - DEBUG - Reading 'head' table from disk
+2025-04-21 16:25:32,349 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'head' table
+2025-04-21 16:25:32,350 - fontTools.subset.timer - DEBUG - Took 0.003s to load 'gvar'
+2025-04-21 16:25:32,351 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'gvar'
+2025-04-21 16:25:32,351 - fontTools.subset - INFO - gvar pruned
+2025-04-21 16:25:32,351 - fontTools.subset.timer - DEBUG - Took 0.000s to load 'glyf'
+2025-04-21 16:25:32,351 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'glyf'
+2025-04-21 16:25:32,351 - fontTools.subset - INFO - glyf pruned
+2025-04-21 16:25:32,351 - fontTools.subset.timer - DEBUG - Took 0.000s to close glyph list over 'cmap'
+2025-04-21 16:25:32,351 - fontTools.subset - INFO - Added gid0 to subset
+2025-04-21 16:25:32,351 - fontTools.subset - INFO - Closing glyph list over 'glyf': 10 glyphs before
+2025-04-21 16:25:32,351 - fontTools.subset - INFO - Glyph names: ['.notdef', 'P', 'a', 'e', 'f', 'g', 'o', 'one', 'space', 'two']
+2025-04-21 16:25:32,353 - fontTools.subset - INFO - Glyph IDs:   [0, 146, 222, 260, 283, 284, 345, 676, 677, 861]
+2025-04-21 16:25:32,353 - fontTools.subset - INFO - Closed glyph list over 'glyf': 10 glyphs after
+2025-04-21 16:25:32,353 - fontTools.subset - INFO - Glyph names: ['.notdef', 'P', 'a', 'e', 'f', 'g', 'o', 'one', 'space', 'two']
+2025-04-21 16:25:32,353 - fontTools.subset - INFO - Glyph IDs:   [0, 146, 222, 260, 283, 284, 345, 676, 677, 861]
+2025-04-21 16:25:32,353 - fontTools.subset.timer - DEBUG - Took 0.001s to close glyph list over 'glyf'
+2025-04-21 16:25:32,354 - fontTools.subset - INFO - Retaining 10 glyphs
+2025-04-21 16:25:32,354 - fontTools.subset - INFO - head subsetting not needed
+2025-04-21 16:25:32,355 - fontTools.subset - INFO - hhea subsetting not needed
+2025-04-21 16:25:32,355 - fontTools.subset - INFO - maxp subsetting not needed
+2025-04-21 16:25:32,355 - fontTools.subset - INFO - OS/2 subsetting not needed
+2025-04-21 16:25:32,355 - fontTools.ttLib.ttFont - DEBUG - Reading 'hmtx' table from disk
+2025-04-21 16:25:32,355 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'hmtx' table
+2025-04-21 16:25:32,355 - fontTools.ttLib.ttFont - DEBUG - Reading 'hhea' table from disk
+2025-04-21 16:25:32,355 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'hhea' table
+2025-04-21 16:25:32,357 - fontTools.subset.timer - DEBUG - Took 0.003s to subset 'hmtx'
+2025-04-21 16:25:32,357 - fontTools.subset - INFO - hmtx subsetted
+2025-04-21 16:25:32,358 - fontTools.subset.timer - DEBUG - Took 0.000s to subset 'cmap'
+2025-04-21 16:25:32,358 - fontTools.subset - INFO - cmap subsetted
+2025-04-21 16:25:32,358 - fontTools.subset - INFO - loca subsetting not needed
+2025-04-21 16:25:32,358 - fontTools.subset.timer - DEBUG - Took 0.000s to subset 'post'
+2025-04-21 16:25:32,358 - fontTools.subset - INFO - post subsetted
+2025-04-21 16:25:32,358 - fontTools.subset - INFO - gasp subsetting not needed
+2025-04-21 16:25:32,358 - fontTools.ttLib.ttFont - DEBUG - Reading 'HVAR' table from disk
+2025-04-21 16:25:32,358 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'HVAR' table
+2025-04-21 16:25:32,363 - fontTools.subset.timer - DEBUG - Took 0.004s to subset 'HVAR'
+2025-04-21 16:25:32,363 - fontTools.subset - INFO - HVAR subsetted
+2025-04-21 16:25:32,363 - fontTools.subset - INFO - STAT subsetting not needed
+2025-04-21 16:25:32,363 - fontTools.ttLib.ttFont - DEBUG - Reading 'GDEF' table from disk
+2025-04-21 16:25:32,364 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'GDEF' table
+2025-04-21 16:25:32,364 - fontTools.subset.timer - DEBUG - Took 0.001s to subset 'GDEF'
+2025-04-21 16:25:32,364 - fontTools.subset - INFO - GDEF subsetted
+2025-04-21 16:25:32,365 - fontTools.subset - INFO - fvar subsetting not needed
+2025-04-21 16:25:32,365 - fontTools.subset - INFO - avar subsetting not needed
+2025-04-21 16:25:32,365 - fontTools.subset.timer - DEBUG - Took 0.001s to subset 'gvar'
+2025-04-21 16:25:32,366 - fontTools.subset - INFO - gvar subsetted
+2025-04-21 16:25:32,366 - fontTools.subset - INFO - name subsetting not needed
+2025-04-21 16:25:32,366 - fontTools.subset.timer - DEBUG - Took 0.001s to subset 'glyf'
+2025-04-21 16:25:32,366 - fontTools.subset - INFO - glyf subsetted
+2025-04-21 16:25:32,367 - fontTools.subset.timer - DEBUG - Took 0.000s to subset GlyphOrder
+2025-04-21 16:25:32,367 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'head'
+2025-04-21 16:25:32,367 - fontTools.subset - INFO - head pruned
+2025-04-21 16:25:32,367 - fontTools.ttLib.ttFont - DEBUG - Reading 'OS/2' table from disk
+2025-04-21 16:25:32,367 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'OS/2' table
+2025-04-21 16:25:32,367 - fontTools.subset - INFO - OS/2 Unicode ranges pruned: [0]
+2025-04-21 16:25:32,367 - fontTools.subset - INFO - OS/2 CodePage ranges pruned: [0]
+2025-04-21 16:25:32,368 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'glyf'
+2025-04-21 16:25:32,368 - fontTools.subset - INFO - glyf pruned
+2025-04-21 16:25:32,368 - fontTools.subset.timer - DEBUG - Took 0.000s to prune 'GDEF'
+2025-04-21 16:25:32,368 - fontTools.subset - INFO - GDEF pruned
+2025-04-21 16:25:32,368 - fontTools.ttLib.ttFont - DEBUG - Reading 'name' table from disk
+2025-04-21 16:25:32,368 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'name' table
+2025-04-21 16:25:32,370 - fontTools.ttLib.ttFont - DEBUG - Reading 'gasp' table from disk
+2025-04-21 16:25:32,370 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'gasp' table
+2025-04-21 16:25:32,370 - fontTools.ttLib.ttFont - DEBUG - Reading 'STAT' table from disk
+2025-04-21 16:25:32,370 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'STAT' table
+2025-04-21 16:25:32,371 - fontTools.ttLib.ttFont - DEBUG - Reading 'avar' table from disk
+2025-04-21 16:25:32,371 - fontTools.ttLib.ttFont - DEBUG - Decompiling 'avar' table
+2025-04-21 16:25:32,371 - fontTools.subset.timer - DEBUG - Took 0.002s to prune 'name'
+2025-04-21 16:25:32,371 - fontTools.subset - INFO - name pruned
+2025-04-21 16:25:32,386 - fontTools.varlib.mutator - INFO - Normalized location: {'wght': 0.0}
+2025-04-21 16:25:32,386 - fontTools.varlib.mutator - INFO - Mutating glyf/gvar tables
+2025-04-21 16:25:32,415 - fontTools.varlib.mutator - INFO - Mutating FeatureVariations
+2025-04-21 16:25:32,416 - fontTools.varlib.mutator - INFO - Pruning name table
+2025-04-21 16:25:32,417 - fontTools.varlib.mutator - INFO - Removing variable tables
+2025-04-21 16:25:32,425 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 16:25:32] "GET /generate_statement?customer_id=2&language=ta HTTP/1.1" 200 -
+2025-04-21 17:18:37,822 - werkzeug - INFO -  * Detected change in 'D:\\FIRST_ASSESMENT_BLESSON-round-2-\\routes.py', reloading
+2025-04-21 17:18:38,749 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 17:18:40,148 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 17:18:40,173 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 17:18:40,178 - werkzeug - INFO -  * Debugger PIN: 345-036-325
+2025-04-21 17:19:04,705 - werkzeug - INFO -  * Detected change in 'D:\\FIRST_ASSESMENT_BLESSON-round-2-\\validators\\rules.py', reloading
+2025-04-21 17:19:04,931 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 17:19:06,091 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 17:19:06,110 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 17:19:06,113 - werkzeug - INFO -  * Debugger PIN: 345-036-325
+2025-04-21 17:19:35,710 - werkzeug - INFO -  * Detected change in 'D:\\FIRST_ASSESMENT_BLESSON-round-2-\\app.py', reloading
+2025-04-21 17:19:35,821 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 17:19:36,476 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 17:19:36,490 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 17:19:36,496 - werkzeug - INFO -  * Debugger PIN: 345-036-325
+2025-04-21 17:26:52,142 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 17:26:52,173 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-21 17:26:52,173 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-21 17:26:52,174 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 17:26:52,854 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 17:26:52,876 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 17:26:52,880 - werkzeug - INFO -  * Debugger PIN: 345-036-325
