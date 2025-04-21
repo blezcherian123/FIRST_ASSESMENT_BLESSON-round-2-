@@ -91,7 +91,29 @@ A transaction validation system to identify high-value transactions from uploade
 - PDF output for different categories
 
 ## Folder Structure
-...
+FIRST_ASSESMENT_BLESSON-round-2/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes.py              # All Flask routes
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── pdf_generator.py   # PDF generation logic
+│   │   ├── db_utils.py        # DB access logic
+│   │   └── language_utils.py  # Multilingual text support
+│   └── config.py              # Any config (e.g. DB, fonts)
+│
+├── tests/
+│   ├── __init__.py
+│   └── test_pdf_generator.py  # Unit tests for PDF generation
+│
+├── sample_output/             # Example generated PDFs
+├── static/                    # Static files (if any)
+├── templates/                 # HTML templates (if needed)
+├── requirements.txt
+├── app.py                     # Run the Flask app from here
+└── README.md
+
 
 ## How to Run
 1. pip install -r requirements.txt
