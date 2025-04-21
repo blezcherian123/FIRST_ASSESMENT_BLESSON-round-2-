@@ -3729,3 +3729,15 @@
 2025-04-18 14:04:09,926 - statement_web_app - WARNING - No customer found with ID 16
 2025-04-18 14:04:09,926 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2025 14:04:09] "[33mGET /api/customer/16 HTTP/1.1[0m" 404 -
 2025-04-18 14:04:13,730 - werkzeug - INFO - 127.0.0.1 - - [18/Apr/2025 14:04:13] "GET /api/customer/15 HTTP/1.1" 200 -
+2025-04-21 10:53:12,724 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 10:53:12,847 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-21 10:53:12,847 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-21 10:53:12,865 - werkzeug - INFO -  * Restarting with stat
+2025-04-21 10:53:13,534 - statement_web_app - WARNING - Config file config.ini not found. Using default values.
+2025-04-21 10:53:13,548 - werkzeug - WARNING -  * Debugger is active!
+2025-04-21 10:53:13,555 - werkzeug - INFO -  * Debugger PIN: 345-036-325
+2025-04-21 10:53:18,008 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 10:53:18] "GET / HTTP/1.1" 200 -
+2025-04-21 10:53:18,230 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 10:53:18] "GET /api/languages HTTP/1.1" 200 -
+2025-04-21 10:53:18,309 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 10:53:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-21 10:53:25,236 - werkzeug - INFO - 127.0.0.1 - - [21/Apr/2025 10:53:25] "GET /api/customer/1 HTTP/1.1" 200 -

@@ -79,3 +79,20 @@ DBS Bank is a leading financial services group in Asia, headquartered in Singapo
 ## License
 
 DBS Bank Credit Card Statement Generator (c) DBS Bank - Internal Use Only
+
+
+## Project Overview
+A transaction validation system to identify high-value transactions from uploaded bank statements.
+
+## Features
+- UI with multi-page support
+- File upload
+- Validation and rules checking
+- PDF output for different categories
+
+## Folder Structure
+...
+
+## How to Run
+1. pip install -r requirements.txt
+2. python app.py

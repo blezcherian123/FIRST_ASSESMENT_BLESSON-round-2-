@@ -98,3 +98,11 @@ This document outlines the validation rules enforced in the system to ensure dat
 - Negative amount
 - Invalid dates
 
+
+## Validation Rules
+
+1. File type must be CSV or XLSX.
+2. Maximum file size: 5MB.
+3. Required columns: account_number, amount, date.
+4. Amount > 10,000 is flagged as high value.
+5. Date format must be valid.
