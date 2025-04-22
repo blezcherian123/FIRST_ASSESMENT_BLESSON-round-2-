@@ -1,0 +1,37 @@
+project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   └── statement_routes.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── pdf_generator.py
+│   ├── validators/
+│   │   ├── __init__.py
+│   │   ├── data_validators.py
+│   │   ├── file_validators.py
+│   │   └── rules.py
+│   └── models/
+│       └── __init__.py  # (Optional: define your DB or transaction models)
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_routes.py
+│   ├── test_validators.py
+│   ├── test_services.py
+│   └── conftest.py  # (Optional: setup common pytest fixtures)
+│
+├── test_cases/
+│   └── test_case.md
+│
+├── db/
+├── templates/
+├── assets/
+├── sample_output/
+├── app.py
+├── README.md
+├── config.py  # (Optional: for reusable configs/paths)
+├── requirements.txt
+└── .gitignore
